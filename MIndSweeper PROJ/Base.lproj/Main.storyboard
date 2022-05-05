@@ -194,6 +194,9 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHe-Yd-oP8">
                                                 <rect key="frame" x="0.0" y="0.0" width="45.5" height="280"/>
+                                                <connections>
+                                                    <action selector="columnButtonDidTap:" destination="3rW-uh-Zxc" eventType="touchUpInside" id="X5O-ko-vU5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
