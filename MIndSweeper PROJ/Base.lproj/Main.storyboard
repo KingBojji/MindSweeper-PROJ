@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Select Color View Controller-->
         <scene sceneID="xDs-bQ-2ri">
             <objects>
-                <viewController id="WH2-kP-q8f" sceneMemberID="viewController">
+                <viewController id="WH2-kP-q8f" customClass="SelectColorViewController" customModule="MIndSweeper_PROJ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rF4-7e-lBo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,15 +144,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G6b-xX-cjX"/>
+                    <connections>
+                        <outletCollection property="colorButtons" destination="Ktr-lQ-nFP" collectionClass="NSMutableArray" id="iDC-M1-6ff"/>
+                        <outletCollection property="colorButtons" destination="CDZ-Id-9vN" collectionClass="NSMutableArray" id="JmW-sj-jj5"/>
+                        <outletCollection property="gameModeButtons" destination="t9E-aW-sU3" collectionClass="NSMutableArray" id="scm-P9-NDp"/>
+                        <outletCollection property="gameModeButtons" destination="hoO-Xt-ffy" collectionClass="NSMutableArray" id="RPj-zu-Xtx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOD-Nz-mYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="81.159420289855078" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="onp-DT-F9x">
             <objects>
-                <viewController id="3rW-uh-Zxc" sceneMemberID="viewController">
+                <viewController id="3rW-uh-Zxc" customClass="GameViewController" customModule="MIndSweeper_PROJ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IWE-f5-AyV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -483,7 +489,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Yc5-Fm-qdp" secondAttribute="trailing" id="9n1-Qa-9Rf"/>
-                                    <constraint firstItem="Yc5-Fm-qdp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cdu-kv-daU" secondAttribute="trailing" symbolic="YES" id="GUl-YL-DYt"/>
+                                    <constraint firstItem="Yc5-Fm-qdp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cdu-kv-daU" secondAttribute="trailing" constant="8" symbolic="YES" id="GUl-YL-DYt"/>
                                     <constraint firstItem="Yc5-Fm-qdp" firstAttribute="centerY" secondItem="sOf-BR-o1L" secondAttribute="centerY" multiplier="1.2" id="LZM-CX-8vX"/>
                                     <constraint firstItem="Cdu-kv-daU" firstAttribute="leading" secondItem="sOf-BR-o1L" secondAttribute="leading" constant="20" id="amr-Tk-yp2"/>
                                     <constraint firstItem="Cdu-kv-daU" firstAttribute="centerY" secondItem="sOf-BR-o1L" secondAttribute="centerY" multiplier="1.2" id="cOc-Iw-9Py"/>
@@ -502,6 +508,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zGN-hK-HOb"/>
+                    <connections>
+                        <outlet property="currentTurnImageView" destination="Cdu-kv-daU" id="4oO-yf-NYC"/>
+                        <outlet property="currentTurnLabel" destination="Yc5-Fm-qdp" id="xuI-83-Jw9"/>
+                        <outlet property="gameBoard" destination="Wfn-wE-L7m" id="9f7-Wc-1fJ"/>
+                        <outletCollection property="columnViews" destination="eHe-Yd-oP8" collectionClass="NSMutableArray" id="uAz-Fp-R9I"/>
+                        <outletCollection property="columnButtons" destination="eHe-Yd-oP8" collectionClass="NSMutableArray" id="pcN-ch-F6p"/>
+                        <outletCollection property="columnButtons" destination="Ixp-oa-EMQ" collectionClass="NSMutableArray" id="fQR-gs-0ux"/>
+                        <outletCollection property="columnViews" destination="Ixp-oa-EMQ" collectionClass="NSMutableArray" id="vk7-0K-6n0"/>
+                        <outletCollection property="columnButtons" destination="XaN-jd-OHd" collectionClass="NSMutableArray" id="lkz-Ta-4cf"/>
+                        <outletCollection property="columnViews" destination="XaN-jd-OHd" collectionClass="NSMutableArray" id="K2C-eD-9N2"/>
+                        <outletCollection property="columnButtons" destination="OeB-2E-cZf" collectionClass="NSMutableArray" id="aRe-5v-5X2"/>
+                        <outletCollection property="columnViews" destination="OeB-2E-cZf" collectionClass="NSMutableArray" id="NRR-sk-iiy"/>
+                        <outletCollection property="columnButtons" destination="Pya-yQ-ev3" collectionClass="NSMutableArray" id="cSW-Se-eC4"/>
+                        <outletCollection property="columnButtons" destination="Hlz-qk-oE1" collectionClass="NSMutableArray" id="GTC-OP-Ufd"/>
+                        <outletCollection property="columnViews" destination="Pya-yQ-ev3" collectionClass="NSMutableArray" id="X6W-UH-gIT"/>
+                        <outletCollection property="columnViews" destination="Hlz-qk-oE1" collectionClass="NSMutableArray" id="LDn-VH-cax"/>
+                        <outletCollection property="columnButtons" destination="W1M-41-pYM" collectionClass="NSMutableArray" id="fKf-oh-ypd"/>
+                        <outletCollection property="columnViews" destination="W1M-41-pYM" collectionClass="NSMutableArray" id="7l5-sU-J4f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8j-KF-Ru1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

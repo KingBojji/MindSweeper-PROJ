@@ -10,6 +10,8 @@ class SelectColorViewController: UIViewController {
     
     @IBOutlet var colorButtons:[UIImageView]!
     @IBOutlet var gameModeButtons: [UILabel]!
+
+
     var colorSelected:ChipColor = .red
     var gameMode: GameMode = .onePlayer
 
