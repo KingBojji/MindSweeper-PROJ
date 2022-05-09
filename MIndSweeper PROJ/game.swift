@@ -119,7 +119,7 @@ extension GameViewController {
             currentTurnLabel.text = board.activePlayer === board.player ? "Your Turn" : "Computer's Turn"
         } else {
             
-            currentTurnLabel.text = board.activePlayer === board.player ? "Player 1 Turn" : "Player 2 Turn"
+            currentTurnLabel.text = board.activePlayer === board.player ? "Player 1's Turn" : "Player 2's Turn"
         }
         
     }

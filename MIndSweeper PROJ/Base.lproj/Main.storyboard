@@ -126,6 +126,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2bF-K6-ptL"/>
                         <color key="backgroundColor" red="0.396078431372549" green="0.72156862745098038" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.39607843139999999" green="0.72156862749999995" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bwV-pf-9em" firstAttribute="top" secondItem="C87-fs-kKj" secondAttribute="bottom" constant="-17" id="2Uy-Dt-54J"/>
                             <constraint firstItem="bwV-pf-9em" firstAttribute="leading" secondItem="2bF-K6-ptL" secondAttribute="leading" id="5Kz-wK-5JN"/>
@@ -143,7 +144,7 @@
                             <constraint firstItem="C87-fs-kKj" firstAttribute="leading" secondItem="2bF-K6-ptL" secondAttribute="leading" id="rL5-VR-2z3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="G6b-xX-cjX"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="G6b-xX-cjX"/>
                     <connections>
                         <outletCollection property="colorButtons" destination="Ktr-lQ-nFP" collectionClass="NSMutableArray" id="iDC-M1-6ff"/>
                         <outletCollection property="colorButtons" destination="CDZ-Id-9vN" collectionClass="NSMutableArray" id="JmW-sj-jj5"/>
@@ -239,6 +240,9 @@
                                             </stackView>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixp-oa-EMQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="280"/>
+                                                <connections>
+                                                    <action selector="columnButtonDidTap:" destination="3rW-uh-Zxc" eventType="touchUpInside" id="R0r-A2-nHb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -281,6 +285,9 @@
                                             </stackView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaN-jd-OHd">
                                                 <rect key="frame" x="0.0" y="0.0" width="45.5" height="280"/>
+                                                <connections>
+                                                    <action selector="columnButtonDidTap:" destination="3rW-uh-Zxc" eventType="touchUpInside" id="qHH-NS-SbD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -323,6 +330,9 @@
                                             </stackView>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeB-2E-cZf">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="280"/>
+                                                <connections>
+                                                    <action selector="columnButtonDidTap:" destination="3rW-uh-Zxc" eventType="touchUpInside" id="mZh-zV-2YP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -365,6 +375,9 @@
                                             </stackView>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pya-yQ-ev3">
                                                 <rect key="frame" x="0.0" y="0.0" width="45.5" height="280"/>
+                                                <connections>
+                                                    <action selector="columnButtonDidTap:" destination="3rW-uh-Zxc" eventType="touchUpInside" id="r4u-ZP-whp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -407,6 +420,9 @@
                                             </stackView>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlz-qk-oE1">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="280"/>
+                                                <connections>
+                                                    <action selector="columnButtonDidTap:" destination="3rW-uh-Zxc" eventType="touchUpInside" id="zhO-jR-zVj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -449,6 +465,9 @@
                                             </stackView>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1M-41-pYM">
                                                 <rect key="frame" x="0.0" y="0.0" width="45.5" height="280"/>
+                                                <connections>
+                                                    <action selector="columnButtonDidTap:" destination="3rW-uh-Zxc" eventType="touchUpInside" id="E3D-pe-ooV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -501,7 +520,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yhL-fb-qoe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.39607843139999999" green="0.72156862749999995" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Wfn-wE-L7m" firstAttribute="top" secondItem="sOf-BR-o1L" secondAttribute="bottom" constant="40" id="0Wh-VK-YjN"/>
                             <constraint firstItem="Wfn-wE-L7m" firstAttribute="leading" secondItem="sOf-BR-o1L" secondAttribute="leading" id="74Z-oV-uwE"/>
@@ -600,9 +619,6 @@
         <image name="gridTile" width="400" height="395"/>
         <image name="redChip" width="100" height="100"/>
         <image name="yellowChip" width="100" height="100"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -1,11 +1,3 @@
-//
-//  Board.swift
-//  connect4
-//
-//  Created by Laura Scully on 25/5/2017.
-//  Copyright © 2017 laura.sempere.com. All rights reserved.
-//
-
 import Foundation
 
 enum ChipColor: Int {
@@ -23,11 +15,9 @@ enum Directions: Int {
 
 class Board: NSObject {
     
-    // Number of spots per width and height
     static var width = 7
     static var height = 6
     
-    // Board spots are initialized with 'none' color, meaning empty spaces
     var spots:[[ChipColor]] = Array(repeating: Array(repeating: .none, count: width), count: height)
     
     var activePlayer:Player
