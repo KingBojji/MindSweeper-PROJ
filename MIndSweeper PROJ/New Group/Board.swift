@@ -18,7 +18,7 @@ class Board: NSObject {
     static var width = 7
     static var height = 6
     
-    var spots:[[ChipColor]] = Array(repeating: Array(repeating: .none, count: width), count: height)
+    var spots:[[ChipColor]] = Array(repeating: Array(repeating: .none, count: height), count: width)
     
     var activePlayer:Player
     let player:Player
@@ -55,7 +55,7 @@ class Board: NSObject {
     
     func nextEmptyRow(at column: Int) -> Int? {
         for row in 0 ..< Board.height {
-            let currChip = spots[row][column]
+            let currChip = spots[column][row]
             if currChip == .none {
                 return row
             }
@@ -86,6 +86,7 @@ class Board: NSObject {
         if row + connections > Board.height { return false }
         
         for i in 0 ..< connections {
+            if col + 1 > Board.height || row + i > Board.width { return false }
             if spots[row + i][col] != chip {
                 return false
             }
@@ -178,7 +179,7 @@ class Board: NSObject {
         
         for row in 0 ..< Board.height {
             for col in 0 ..< Board.width {
-                if spots[row][col] == .none {
+                if spots[col][row] == .none {
                     return true
                 }
             }

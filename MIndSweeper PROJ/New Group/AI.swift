@@ -46,13 +46,13 @@ class AI: NSObject {
             for col in 0 ..< Board.width {
                 
                 if let row = board.nextEmptyRow(at: col) {
-                    board.spots[row][col] = board.activePlayer.chip
+                    board.spots[col][row] = board.activePlayer.chip
                     board.swapTurn()
                     
                     bestScore = max(bestScore, minimaxStrategy(board: board, depth: depth - 1, isMax: !isMax))
                     
                     // Undo the move
-                    board.spots[row][col] = .none
+                    board.spots[col][row] = .none
                     
                 }
             }
@@ -68,13 +68,13 @@ class AI: NSObject {
             
             for col in 0 ..< Board.width {
                 if let row = board.nextEmptyRow(at: col) {
-                    board.spots[row][col] = board.activePlayer.chip
+                    board.spots[col][row] = board.activePlayer.chip
                     
                     board.swapTurn()
                     bestScore = min(bestScore, minimaxStrategy(board: board, depth: depth - 1, isMax: !isMax))
                     
                     // Undo the move
-                    board.spots[row][col] = .none
+                    board.spots[col][row] = .none
                 }
             }
             
@@ -95,7 +95,7 @@ class AI: NSObject {
         for col in 0 ..< Board.width {
             if let row = boardCopy.nextEmptyRow(at: col) {
                 
-                boardCopy.spots[row][col] = boardCopy.activePlayer.chip
+                boardCopy.spots[col][row] = boardCopy.activePlayer.chip
                 let moveScore = minimaxStrategy(board: boardCopy, depth: AI.depth, isMax: false)
                 
                 if moveScore != bestScore {
