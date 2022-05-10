@@ -33,14 +33,11 @@ class AI: NSObject {
         if scr == 10 || scr == -10 {
             return scr
         }
-        // No more moves are available. The game is a tie
         if board.areMovesLeft() == false {
             return 0
         }
         
-        // If the Player is the Maximizer
         if isMax {
-            // Initial value is the worst value for a maximizer player
             var bestScore = -10000
             
             for col in 0 ..< Board.width {
@@ -51,7 +48,6 @@ class AI: NSObject {
                     
                     bestScore = max(bestScore, minimaxStrategy(board: board, depth: depth - 1, isMax: !isMax))
                     
-                    // Undo the move
                     board.spots[col][row] = .none
                     
                 }
@@ -60,10 +56,8 @@ class AI: NSObject {
             return bestScore
             
         }
-        // Case when the player is the Minimizer
         else {
             
-            // Initial value is the worst value for a minimizer player
             var bestScore = 10000
             
             for col in 0 ..< Board.width {
@@ -73,7 +67,6 @@ class AI: NSObject {
                     board.swapTurn()
                     bestScore = min(bestScore, minimaxStrategy(board: board, depth: depth - 1, isMax: !isMax))
                     
-                    // Undo the move
                     board.spots[col][row] = .none
                 }
             }
@@ -88,7 +81,6 @@ class AI: NSObject {
         var bestScore = 0
         var bestMove:Move
         
-        // We create a new instance of Board and copy the spots from the original to do all the simulations
         let boardCopy = Board(playerColor: board.player.chip, gameMode: .onePlayer)
         boardCopy.spots = board.spots
         

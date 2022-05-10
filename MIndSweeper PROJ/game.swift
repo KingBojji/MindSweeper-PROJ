@@ -35,7 +35,6 @@ class GameViewController: UIViewController {
     }
     
     
-    // MARK: Game lifecycle functions
     
     private func makeAIMove(move: Move) {
         board.add(chip: board.activePlayer.chip, column: move.column)
@@ -63,13 +62,11 @@ class GameViewController: UIViewController {
     
     func newGame() {
         board.reset()
-        // Clear all the chips from the view
         let chipImageViews = self.view.subviews.filter{$0.tag == 99}
         for chipImageView in chipImageViews {
             chipImageView.removeFromSuperview()
         }
         displayCurrentTurn()
-        // Remove the winning line indicator from the view
         view.viewWithTag(100)?.removeFromSuperview()
         toggleColumnInteration(active: true)
     }
@@ -93,7 +90,6 @@ class GameViewController: UIViewController {
         
     }
     
-    // User interaction
     @IBAction func columnButtonDidTap(_ sender: UIButton) {
         toggleColumnInteration(active: false)
         
@@ -107,7 +103,6 @@ class GameViewController: UIViewController {
     
 }
 
-// MARK: Utils extension
 
 extension GameViewController {
     
@@ -143,12 +138,10 @@ extension GameViewController {
         
         chip.center = CGPoint(x: x, y: y)
         
-        // Initial position of the chip out of the view
         chip.transform = CGAffineTransform(translationX: 0, y: -800)
         
         view.addSubview(chip)
         
-        // Chip Animation in with completion handler
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
             chip.transform = CGAffineTransform.identity
         }) { (completed) in
